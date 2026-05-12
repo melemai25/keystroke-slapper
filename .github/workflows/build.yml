@@ -18,8 +18,9 @@ jobs:
         run: go mod download
       
       - name: Build
-        run: go build -o spank .
-        run: echo "Build successful!"
+        run: |
+          go build -o spank .
+          echo "Build successful!"
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
