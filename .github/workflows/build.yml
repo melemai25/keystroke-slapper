@@ -11,9 +11,6 @@ jobs:
         with:
           go-version: "1.26"
       
-      - name: Install robotgo dependencies
-        run: brew install libxdo
-      
       - name: Download dependencies
         run: go mod download
       
