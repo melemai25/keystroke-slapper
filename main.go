@@ -30,7 +30,8 @@ import (
 	"github.com/taigrr/apple-silicon-accelerometer/detector"
 	"github.com/taigrr/apple-silicon-accelerometer/sensor"
 	"github.com/taigrr/apple-silicon-accelerometer/shm"
-	"github.com/go-vgo/robotgo"//For keystrokes
+	//"github.com/go-vgo/robotgo"//For keystrokes
+	"os/exec"
 )
 
 var version = "dev"
@@ -656,8 +657,9 @@ func amplitudeToVolume(amplitude float64) float64 {
 }}*/
 
 func sendEnterKey() {
-	// Send Enter key
-	robotgo.KeyTap("enter")
+	// Send Enter key (key code 36) via osascript
+	cmd := exec.Command("osascript", "-e", "key code 36")
+	cmd.Run()
 }
 
 /*// stdinCommand represents a command received via stdin
