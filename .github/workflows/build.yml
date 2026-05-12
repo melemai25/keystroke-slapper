@@ -18,7 +18,7 @@ jobs:
         run: go build -o spank .
       
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: spank-binary
           path: spank
